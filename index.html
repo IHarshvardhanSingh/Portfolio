@@ -11,6 +11,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        /* --- Root Variables & Theme --- */
         :root {
             --primary: #00ffcc;
             --secondary: #3399ff;
@@ -23,6 +24,7 @@
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* --- Global Reset --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Outfit', sans-serif;
@@ -33,13 +35,16 @@
             scroll-behavior: smooth;
         }
 
+        /* --- Custom Scrollbar --- */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 10px; }
 
+        /* --- Layout Components --- */
         .section-padding { padding: 100px 0; }
         .container { max-width: 1200px; }
 
+        /* --- Typography --- */
         .mega-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
@@ -71,6 +76,7 @@
             border-radius: 10px;
         }
 
+        /* --- Navbar Glassmorphism --- */
         .navbar {
             background: rgba(5, 6, 10, 0.9) !important;
             backdrop-filter: blur(20px);
@@ -98,6 +104,7 @@
             transform: translateY(-2px);
         }
 
+        /* --- Hero Section --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -138,7 +145,12 @@
             filter: grayscale(20%);
             transition: var(--transition);
         }
+        .profile-container:hover .profile-frame {
+            transform: scale(1.02) rotate(1deg);
+            border-color: var(--secondary);
+        }
 
+        /* --- Ultra Cards --- */
         .ultra-card {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -155,6 +167,7 @@
             border-color: var(--primary);
         }
 
+        /* --- Image Boxes --- */
         .img-box {
             width: 100%;
             height: 280px;
@@ -170,6 +183,7 @@
             transition: 0.8s;
         }
 
+        /* --- Eye Link Overlay --- */
         .overlay-link {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -198,6 +212,7 @@
         }
         .eye-icon:hover { transform: scale(1.2); background: #fff; }
 
+        /* --- Tech Arsenal --- */
         .tech-grid {
             display: flex;
             flex-wrap: wrap;
@@ -222,6 +237,7 @@
             transform: translateY(-5px);
         }
 
+        /* --- Legacy Timeline --- */
         .timeline-box {
             position: relative;
             padding-left: 40px;
@@ -252,6 +268,7 @@
             transform: translateX(15px);
         }
 
+        /* --- Buttons --- */
         .btn-premium {
             background: var(--gradient);
             color: #000 !important;
@@ -285,6 +302,7 @@
         @media (max-width: 991px) {
             .hero { text-align: center; padding-top: 150px; }
             .hero .d-flex { justify-content: center; }
+            .profile-container { margin-top: 50px; }
             .mega-title { font-size: 3.2rem; }
         }
         @media (max-width: 768px) {
@@ -411,8 +429,8 @@
     <section id="ecosystem" class="section-padding bg-black bg-opacity-30">
         <div class="container">
             <h2 class="section-head" data-aos="fade-up">Digital <span>Ecosystem</span></h2>
-            <div class="row g-5">
-                <div class="col-lg-4" data-aos="zoom-in">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in">
                     <div class="ultra-card text-center">
                         <div class="img-box">
                             <img src="hss2.jpeg" alt="CS Solution">
@@ -423,7 +441,7 @@
                             </div>
                         </div>
                         <h4 class="fw-bold">Cience / CS Solution</h4>
-                        <p class="text-dim">A comprehensive mobile learning platform for Grade IX-XII students, integrated with Play Store for global distribution.</p>
+                        <p class="text-dim">A comprehensive mobile learning platform for Grade IX-XII students.</p>
                         <div class="mt-3">
                             <a href="https://iharshvardhansingh.github.io/Cience/" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4">
                                 Live Preview <i class="fas fa-external-link-alt ms-1"></i>
@@ -431,14 +449,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="ultra-card text-center">
                         <div class="img-box"><img src="hss.jpeg" alt="Book Hive"></div>
                         <h4 class="fw-bold">Book Hive</h4>
-                        <p class="text-dim">Professional School Library Desktop Automation system designed for tracking thousands of monographs and categories.</p>
+                        <p class="text-dim">Professional School Library Desktop Automation system.</p>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
                     <div class="ultra-card text-center">
                         <div class="img-box">
                             <img src="hss4.jpeg" alt="Learnix CMS">
@@ -449,9 +467,28 @@
                             </div>
                         </div>
                         <h4 class="fw-bold">Learnix CMS</h4>
-                        <p class="text-dim">An advanced Coaching Management System for tracking student performance, fees, and institutional data flows.</p>
+                        <p class="text-dim">An advanced Coaching Management System for institutional data flows.</p>
                         <div class="mt-3">
                             <a href="https://iharshvardhansingh.github.io/Learnix/" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4">
+                                Live Preview <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="ultra-card text-center">
+                        <div class="img-box">
+                            <img src="examify.jpeg" alt="Examify Portal">
+                            <div class="overlay-link">
+                                <a href="https://iharshvardhansingh.github.io/Examify/" target="_blank" class="eye-icon">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold">Examify Portal</h4>
+                        <p class="text-dim">Specialized web portal for RBSE Board Model Papers distribution.</p>
+                        <div class="mt-3">
+                            <a href="https://iharshvardhansingh.github.io/Examify/" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4">
                                 Live Preview <i class="fas fa-external-link-alt ms-1"></i>
                             </a>
                         </div>
@@ -547,14 +584,14 @@
                         <div class="legacy-card">
                             <h4 class="fw-bold text-primary">Exam In-Charge (Class I to XII)</h4>
                             <p class="small text-dim mb-2">Academic Administration | 2015 - Present</p>
-                            <p class="small mb-0">Strategic planning of examination cycles, duty management, and centralized result processing[cite: 18, 19, 21].</p>
+                            <p class="small mb-0">Strategic planning of examination cycles, duty management, and centralized result processing[cite: 18, 21].</p>
                         </div>
                     </div>
                     <div class="timeline-box">
                         <div class="legacy-card">
                             <h4 class="fw-bold text-primary">Question Paper Setter</h4>
                             <p class="small text-dim mb-2">District Level Common Exams | 2015 - Present</p>
-                            <p class="small mb-0">Expert moderator for Computer Science papers across district-level annual and half-yearly evaluation cycles in Sojat Road[cite: 22, 23, 25].</p>
+                            <p class="small mb-0">Expert moderator for Computer Science papers across district-level annual and half-yearly evaluation cycles in Sojat Road[cite: 22, 25].</p>
                         </div>
                     </div>
                 </div>
