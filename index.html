@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshvardhan Singh | Senior Architect & Educator</title>
+    <title>Harshvardhan Singh | Author, Innovator & Educator</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
             --bg-deep: #0a0b10;
             --card-glass: rgba(255, 255, 255, 0.03);
             --text-bright: #ffffff;
-            --text-muted: #94a3b8;
+            --text-dim: #94a3b8;
             --gradient: linear-gradient(135deg, #00ffcc 0%, #3399ff 100%);
         }
 
@@ -26,96 +26,80 @@
             color: var(--text-bright);
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* Navbar */
         .navbar {
-            background: rgba(10, 11, 16, 0.9) !important;
+            background: rgba(10, 11, 16, 0.95) !important;
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 15px 0;
         }
         .navbar-brand { font-weight: 800; color: var(--accent) !important; }
+        .nav-link { color: var(--text-dim) !important; font-weight: 500; transition: 0.3s; }
+        .nav-link:hover { color: var(--accent) !important; }
 
-        /* Sections */
-        .section-padding { padding: 80px 0; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); text-align: center; margin-bottom: 60px; }
+        /* Typography */
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); text-align: center; margin-bottom: 60px; }
         .section-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Client Cards with Eye Link */
-        .client-card {
+        /* Hero Section */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; }
+        .profile-img { 
+            width: 100%; max-width: 400px; border-radius: 40px; 
+            border: 3px solid var(--accent); box-shadow: 0 0 50px rgba(0, 255, 204, 0.2); 
+        }
+
+        /* Cards & Hover Effects */
+        .premium-card {
             background: var(--card-glass);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
             padding: 20px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.4s ease;
             height: 100%;
             position: relative;
+            overflow: hidden;
         }
-        .client-card:hover {
-            transform: translateY(-15px);
+        .premium-card:hover {
+            transform: translateY(-10px);
             border-color: var(--accent);
             background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .img-overlay-container {
-            position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            height: 220px;
-            margin-bottom: 20px;
+        /* Image Containers for Books & Work */
+        .img-container {
+            width: 100%; height: 280px; border-radius: 18px; 
+            overflow: hidden; margin-bottom: 20px; position: relative;
         }
-        .img-overlay-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        
-        /* Eye Link Overlay */
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+
+        /* Eye Overlay for Client Work */
         .view-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 255, 204, 0.3);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 255, 204, 0.35);
             display: flex; justify-content: center; align-items: center;
-            opacity: 0; transition: 0.4s;
-            backdrop-filter: blur(4px);
+            opacity: 0; transition: 0.4s; backdrop-filter: blur(4px);
         }
-        .client-card:hover .view-overlay { opacity: 1; }
-        .client-card:hover img { transform: scale(1.1); filter: blur(2px); }
-
+        .premium-card:hover .view-overlay { opacity: 1; }
         .eye-btn {
-            width: 60px; height: 60px;
-            background: #fff; color: #000;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 1.5rem; text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            width: 55px; height: 55px; background: #fff; color: #000;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 1.4rem; text-decoration: none; transition: 0.3s;
         }
-        .eye-btn:hover { transform: scale(1.2); background: var(--accent); }
+        .eye-btn:hover { transform: scale(1.1); background: var(--accent); }
 
-        /* Technical Arsenal Pills */
+        /* Tech Pills */
         .tech-pill {
-            display: inline-block;
-            padding: 8px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            margin: 6px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .tech-pill:hover { border-color: var(--accent); color: var(--accent); }
-
-        /* Legacy Boxes */
-        .legacy-item {
-            padding: 30px;
-            border-left: 5px solid var(--accent);
-            background: rgba(255,255,255,0.02);
-            border-radius: 0 20px 20px 0;
-            margin-bottom: 25px;
+            display: inline-block; padding: 8px 18px; background: rgba(0, 255, 204, 0.05);
+            border: 1px solid var(--accent); border-radius: 10px; margin: 5px;
+            font-size: 0.9rem; font-weight: 600; color: var(--accent);
         }
 
         @media (max-width: 768px) {
-            .section-padding { padding: 50px 0; }
-            .section-title { font-size: 2.2rem; }
+            .hero { text-align: center; }
+            .img-container { height: 220px; }
         }
     </style>
 </head>
@@ -129,146 +113,135 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Intro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#work">Web Infrastructure</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Stack</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Web Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:harshvardhansinghsolanki@yahoo.co.in">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="section-padding" style="min-height: 90vh; display: flex; align-items: center;">
+    <section id="home" class="hero">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-7" data-aos="fade-right">
-                    <h5 class="text-info fw-bold mb-3">Author | Innovator | Programmer | HOD</h5>
-                    <h1 class="section-title text-start mb-4">Architecting <span>Digital Legacy</span></h1>
-                    <p class="text-muted fs-5 mb-5">Senior PGT Computer Science at Birla International School. Mastery in software development, databases, and large-scale web systems[cite: 9, 10].</p>
+                    <h5 class="text-info fw-bold mb-3">AUTHOR • INNOVATOR • PGT CS</h5>
+                    <h1 class="section-title text-start mb-4">Mastering <span>Digital Innovation</span></h1>
+                    <p class="text-dim fs-5 mb-5">HOD Computer Science at Birla International School with 15+ years of excellence in programming and database architecture[cite: 9, 10].</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="tel:+918005676406" class="btn btn-info btn-lg rounded-pill px-5 py-3 fw-bold">Contact Now</a>
+                        <a href="tel:+918005676406" class="btn btn-info btn-lg rounded-pill px-5 fw-bold">Call Now</a>
                     </div>
                 </div>
-                <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="zoom-in">
-                    <img src="image.PNG" class="img-fluid rounded-5 shadow-lg border border-info border-opacity-25" style="max-height: 400px;" alt="Harshvardhan Singh">
+                <div class="col-lg-5 text-center mb-5" data-aos="zoom-in">
+                    <img src="image.PNG" class="profile-img" alt="Profile">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="work" class="section-padding bg-black bg-opacity-25">
+    <section id="books" class="py-5">
         <div class="container">
-            <span class="d-block text-center text-accent fw-bold mb-2">Our Premium Clients</span>
+            <h2 class="section-title">Published <span>Authorship</span></h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-3" data-aos="fade-up">
+                    <div class="premium-card text-center">
+                        <div class="img-container"><img src="book1.jpeg" alt="Brief of Computer"></div>
+                        <h6 class="fw-bold">Brief of Computer</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card text-center">
+                        <div class="img-container"><img src="book2.jpeg" alt="C Language"></div>
+                        <h6 class="fw-bold">C Programming</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card text-center">
+                        <div class="img-container"><img src="book4.jpeg" alt="Code Connections"></div>
+                        <h6 class="fw-bold">Code Connections</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="premium-card text-center">
+                        <div class="img-container"><img src="book5.jpeg" alt="IT Grade X"></div>
+                        <h6 class="fw-bold">IT Grade X</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-5 bg-black bg-opacity-25">
+        <div class="container">
             <h2 class="section-title">Web <span>Infrastructure</span></h2>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="client-card">
-                        <div class="img-overlay-container">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="premium-card">
+                        <div class="img-container">
                             <img src="client.PNG" alt="Abhyuday College">
                             <div class="view-overlay">
-                                <a href="https://abhyudaycollegejodhpur.com/" target="_blank" class="eye-btn shadow-lg">
-                                    <i class="fas fa-eye"></i>
-                                </a>
+                                <a href="https://abhyudaycollegejodhpur.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a>
                             </div>
                         </div>
-                        <h4 class="fw-bold">Abhyuday College</h4>
-                        <p class="text-muted small">Premium institutional portal for nurturing talent and tradition in Jodhpur.</p>
+                        <h5 class="fw-bold">Abhyuday College</h5>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="client-card">
-                        <div class="img-overlay-container">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="premium-card">
+                        <div class="img-container">
                             <img src="client1.PNG" alt="Physics Institute">
                             <div class="view-overlay">
-                                <a href="https://physicsresearchinstitute.com/" target="_blank" class="eye-btn shadow-lg">
-                                    <i class="fas fa-eye"></i>
-                                </a>
+                                <a href="https://physicsresearchinstitute.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a>
                             </div>
                         </div>
-                        <h4 class="fw-bold">Physics Institute</h4>
-                        <p class="text-muted small">Advanced research and learning platform with interactive academic resources.</p>
+                        <h5 class="fw-bold">Physics Institute</h5>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="client-card">
-                        <div class="img-overlay-container">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="premium-card">
+                        <div class="img-container">
                             <img src="client2.PNG" alt="Abhyuday Law">
                             <div class="view-overlay">
-                                <a href="https://abhyudaylawcollegejodhpur.com/" target="_blank" class="eye-btn shadow-lg">
-                                    <i class="fas fa-eye"></i>
-                                </a>
+                                <a href="https://abhyudaylawcollegejodhpur.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a>
                             </div>
                         </div>
-                        <h4 class="fw-bold">Abhyuday Law</h4>
-                        <p class="text-muted small">Specialized web infrastructure for empowering future legal professionals.</p>
+                        <h5 class="fw-bold">Abhyuday Law</h5>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section-padding">
+    <section id="skills" class="py-5">
         <div class="container text-center">
             <h2 class="section-title">Technical <span>Arsenal</span></h2>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Oracle Database</span>
+                    <span class="tech-pill">Oracle DB</span>
                     <span class="tech-pill">Java / Kotlin</span>
-                    <span class="tech-pill">C & C++</span>
-                    <span class="tech-pill">MS Azure Framework</span>
-                    <span class="tech-pill">LINQ & SQL</span>
+                    <span class="tech-pill">C / C++</span>
                     <span class="tech-pill">ASP.NET</span>
-                    <span class="tech-pill">WPF Desktop Apps</span>
-                    <span class="tech-pill">Fluent Spoken English</span>
+                    <span class="tech-pill">MS Azure</span>
+                    <span class="tech-pill">WPF</span>
+                    <span class="tech-pill">Fluent English</span>
                     <span class="tech-pill">French Language</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="legacy" class="section-padding bg-black bg-opacity-40">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h3 class="mb-5 text-info fw-bold fs-2">Teaching Legacy</h3>
-                    <div class="legacy-item">
-                        <h4>HOD & PGT Computer Science</h4>
-                        <p class="text-info fw-bold small">Birla International School (Since 2011)</p>
-                        <p class="text-muted small">Managing full-scale labs and teaching 10+2 levels[cite: 9, 10].</p>
-                    </div>
-                    <div class="legacy-item">
-                        <h4>Exam In-Charge</h4>
-                        <p class="text-info fw-bold small">I to XII (Since 2015)</p>
-                        <p class="text-muted small">Strategic planning and execution of all school-level examinations[cite: 21].</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h3 class="mb-5 text-info fw-bold fs-2">Academic Pillars</h3>
-                    <div class="legacy-item">
-                        <h4>MCA (Hons Division)</h4>
-                        <p class="text-info fw-bold small">RTU Kota (2011)</p>
-                        <p class="text-muted small">Master of Computer Application with Honors distinction[cite: 27].</p>
-                    </div>
-                    <div class="legacy-item">
-                        <h4>BCA (First Division)</h4>
-                        <p class="text-info fw-bold small">MCNU Bhopal (2008)</p>
-                        <p class="text-muted small">Bachelor of Computer Application with excellence.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-5 border-top border-secondary border-opacity-25">
+    <footer class="py-5 text-center border-top border-secondary border-opacity-25">
         <div class="container">
             <h2 class="navbar-brand fs-1 mb-4">H.S. SOLANKI</h2>
             <div class="d-flex justify-content-center gap-4 mb-4">
-                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white fs-4"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+918005676406" class="text-white fs-4"><i class="fas fa-phone"></i></a>
-                <a href="http://www.digitalguideweb.in" target="_blank" class="text-white fs-4"><i class="fas fa-globe"></i></a>
+                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white fs-3"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+918005676406" class="text-white fs-3"><i class="fas fa-phone"></i></a>
+                <a href="http://www.digitalguideweb.in" target="_blank" class="text-white fs-3"><i class="fas fa-globe"></i></a>
             </div>
-            <p class="text-muted small">&copy; 2026. Designed with Excellence by PJ.</p>
+            <p class="text-dim small">&copy; 2026. Designed with Excellence by PJ.</p>
         </div>
     </footer>
 
