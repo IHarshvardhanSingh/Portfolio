@@ -29,7 +29,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navbar */
         .navbar {
             background: rgba(10, 11, 16, 0.95) !important;
             backdrop-filter: blur(20px);
@@ -40,13 +39,11 @@
         .nav-link { color: var(--text-dim) !important; font-weight: 500; transition: 0.3s; margin: 0 10px; }
         .nav-link:hover { color: var(--accent) !important; }
 
-        /* Hero Section */
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; }
         .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
         .hero-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .profile-img { width: 100%; max-width: 400px; border-radius: 40px; border: 3px solid var(--accent); box-shadow: 0 0 50px rgba(0, 255, 204, 0.2); }
 
-        /* Generic Card Style */
         .premium-card {
             background: var(--card-glass);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -58,14 +55,12 @@
         }
         .premium-card:hover { transform: translateY(-10px); border-color: var(--accent); background: rgba(255, 255, 255, 0.07); }
 
-        /* Image Containers (Fixed Aspect Ratio) */
         .img-container {
             width: 100%; height: 260px; border-radius: 18px; 
             overflow: hidden; margin-bottom: 15px; position: relative;
         }
         .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 
-        /* Eye Link Overlay */
         .view-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 255, 204, 0.4);
@@ -73,23 +68,19 @@
             opacity: 0; transition: 0.4s; backdrop-filter: blur(4px);
         }
         .premium-card:hover .view-overlay { opacity: 1; }
-        .eye-btn { width: 50px; height: 50px; background: #fff; color: #000; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; }
+        .eye-btn { width: 50px; height: 50px; background: #fff; color: #000; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; text-decoration: none; }
 
-        /* Section Title */
         .section-head { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 50px; }
         .section-head span { color: var(--accent); }
 
-        /* Tech Badges */
         .tech-pill {
             display: inline-block; padding: 10px 20px; background: rgba(0, 255, 204, 0.05);
             border: 1px solid var(--accent); border-radius: 12px; margin: 6px;
-            font-weight: 700; color: var(--accent); transition: 0.3s;
+            font-weight: 700; color: var(--accent);
         }
-        .tech-pill:hover { background: var(--accent); color: #000; }
 
         @media (max-width: 768px) {
             .hero { text-align: center; }
-            .hero-btns { justify-content: center; }
             .img-container { height: 200px; }
         }
     </style>
@@ -104,9 +95,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Intro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#books">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#apps">Ecosystem</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#apps">Apps</a></li>
                     <li class="nav-item"><a class="nav-link" href="#clients">Web Infra</a></li>
                     <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
                 </ul>
@@ -120,48 +111,48 @@
                 <div class="col-lg-7" data-aos="fade-right">
                     <h5 class="text-info fw-bold mb-3">AUTHOR • INNOVATOR • PROGRAMMER • PGT CS</h5>
                     <h1 class="hero-title">Architecting <span>Digital Solutions</span></h1>
-                    <p class="text-dim fs-5 mb-4">HOD Computer Dept at Birla International School. Over 15 years of mastery in software, databases, and networks[cite: 5, 9, 10].</p>
-                    <div class="d-flex flex-wrap gap-3 hero-btns">
-                        <a href="tel:+918005676406" class="btn btn-info btn-lg px-4 fw-bold rounded-pill">Call Me</a>
+                    <p class="text-dim fs-5 mb-4">HOD Computer Science at Birla International School. Mastery in software engineering, database management, and large-scale networks.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="tel:+918005676406" class="btn btn-info btn-lg rounded-pill px-5 fw-bold">Call Now</a>
                         <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="btn btn-outline-light btn-lg px-4 rounded-pill">Email</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center mb-5" data-aos="zoom-in">
-                    <img src="image.PNG" class="profile-img" alt="Harshvardhan Singh">
+                    <img src="image.PNG" class="profile-img shadow-lg" alt="Profile">
                 </div>
             </div>
         </div>
     </section>
 
     <section id="books" class="py-5 bg-black bg-opacity-25">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="section-head">Published <span>Authorship</span></h2>
             <div class="row g-4">
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book1.jpeg"></div><h6>Brief of Computer</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book2.jpeg"></div><h6>C Language</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book3.jpeg"></div><h6>C++ Architecture</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book4.jpeg"></div><h6>Code Connections</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book5.jpeg"></div><h6>IT Grade X</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book6.jpeg"></div><h6>Java Mastery</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book7.jpeg"></div><h6>Beyond Algorithms</h6></div></div>
-                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book8.jpeg"></div><h6>ABC Python</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book1.jpeg"></div><h6>Brief of Computer</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book2.jpeg"></div><h6>C Language</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book3.jpeg"></div><h6>C++ Architecture</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book4.jpeg"></div><h6>Code Connections</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book5.jpeg"></div><h6>IT Grade X</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book6.jpeg"></div><h6>Java Mastery</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book7.jpeg"></div><h6>Beyond Algorithms</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card"><div class="img-container"><img src="book8.jpeg"></div><h6>ABC Python</h6></div></div>
             </div>
         </div>
     </section>
 
     <section id="apps" class="py-5">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="section-head">Digital <span>Ecosystem</span></h2>
             <div class="row g-4">
-                <div class="col-md-4"><div class="premium-card"><img src="hss2.jpeg" class="w-100 rounded-4 mb-3"><h5>CS Solution App</h5><p class="small text-dim">Learning app for Grade IX-XII on Play Store.</p></div></div>
-                <div class="col-md-4"><div class="premium-card"><img src="hss.jpeg" class="w-100 rounded-4 mb-3"><h5>Book Hive</h5><p class="small text-dim">Advanced School Library Desktop Automation[cite: 32].</p></div></div>
-                <div class="col-md-4"><div class="premium-card"><img src="hss4.jpeg" class="w-100 rounded-4 mb-3"><h5>Learnix CMS</h5><p class="small text-dim">Coaching management system for students & fees.</p></div></div>
+                <div class="col-md-4"><div class="premium-card"><img src="hss2.jpeg" class="w-100 rounded-4 mb-3"><h5>CS Solution App</h5><p class="small text-dim">Learning mobile app for Grade IX-XII students.</p></div></div>
+                <div class="col-md-4"><div class="premium-card"><img src="hss.jpeg" class="w-100 rounded-4 mb-3"><h5>Book Hive</h5><p class="small text-dim">School Library Desktop Automation System.</p></div></div>
+                <div class="col-md-4"><div class="premium-card"><img src="hss4.jpeg" class="w-100 rounded-4 mb-3"><h5>Learnix CMS</h5><p class="small text-dim">Coaching & Fees Management Platform.</p></div></div>
             </div>
         </div>
     </section>
 
     <section id="clients" class="py-5 bg-black bg-opacity-25">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="section-head">Web <span>Infrastructure</span></h2>
             <div class="row g-4">
                 <div class="col-md-4"><div class="premium-card">
@@ -180,15 +171,15 @@
         </div>
     </section>
 
-    <section id="skills" class="py-5 text-center">
-        <div class="container">
+    <section id="skills" class="py-5">
+        <div class="container text-center">
             <h2 class="section-head">Technical <span>Arsenal</span></h2>
-            <div class="tech-box p-4 rounded-5 border border-secondary">
+            <div class="p-4 rounded-5 border border-secondary border-opacity-25">
                 <span class="tech-pill">Python</span> <span class="tech-pill">Oracle Database</span>
-                <span class="tech-pill">Java / Kotlin</span> <span class="tech-pill">C / C++</span>
-                <span class="tech-pill">ASP.NET</span> <span class="tech-pill">WPF</span>
-                <span class="tech-pill">MS Azure</span> <span class="tech-pill">LINQ With SQL</span>
-                <span class="tech-pill">Fluent English</span> <span class="tech-pill">French Language</span>
+                <span class="tech-pill">Java / Kotlin</span> <span class="tech-pill">C / C++ Architecture</span>
+                <span class="tech-pill">ASP.NET Development</span> <span class="tech-pill">WPF Desktop Apps</span>
+                <span class="tech-pill">MS Azure Framework</span> <span class="tech-pill">Fluent English</span>
+                <span class="tech-pill">French Language</span>
             </div>
         </div>
     </section>
@@ -196,34 +187,34 @@
     <section id="legacy" class="py-5 bg-black bg-opacity-40">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-6" data-aos="fade-right">
+                <div class="col-lg-6">
                     <h3 class="mb-4 text-info fw-bold">Professional History</h3>
                     <div class="p-4 border-start border-info border-4 bg-white bg-opacity-5 rounded-end mb-3">
                         <h6>HOD & PGT Computer Science</h6>
-                        <p class="small text-dim">Birla International School (Since 2011)[cite: 9, 10].</p>
+                        <p class="small text-dim">Birla International School, Sojat (Since 2011).</p>
                     </div>
                     <div class="p-4 border-start border-info border-4 bg-white bg-opacity-5 rounded-end mb-3">
                         <h6>Exam In-Charge (I-XII)</h6>
-                        <p class="small text-dim">Overall examination administration (Since 2015)[cite: 21].</p>
+                        <p class="small text-dim">Planning and overall examination administration (Since 2015).</p>
                     </div>
                     <div class="p-4 border-start border-info border-4 bg-white bg-opacity-5 rounded-end">
                         <h6>Question Paper Setter</h6>
-                        <p class="small text-dim">District Level Common Exams, Sojat Road (Since 2015)[cite: 25].</p>
+                        <p class="small text-dim">District Level Common Exams, Sojat Road (Since 2015).</p>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
+                <div class="col-lg-6">
                     <h3 class="mb-4 text-info fw-bold">Academic Foundations</h3>
                     <div class="p-4 border-start border-primary border-4 bg-white bg-opacity-5 rounded-end mb-3">
                         <h6>MCA (Hons Division) - 2011</h6>
-                        <p class="small text-dim">Rajasthan Technical University, Kota[cite: 27].</p>
+                        <p class="small text-dim">Rajasthan Technical University, Kota.</p>
                     </div>
                     <div class="p-4 border-start border-primary border-4 bg-white bg-opacity-5 rounded-end mb-3">
                         <h6>BCA (First Division) - 2008</h6>
-                        <p class="small text-dim">M.C.N.U. Bhopal[cite: 35].</p>
+                        <p class="small text-dim">M.C.N.U. Bhopal.</p>
                     </div>
                     <div class="p-4 border-start border-primary border-4 bg-white bg-opacity-5 rounded-end">
-                        <h6>12th Science-Biology (RBSE)</h6>
-                        <p class="small text-dim">Birla International School[cite: 37].</p>
+                        <h6>12th Science-Biology</h6>
+                        <p class="small text-dim">RBSE Board, Birla International School.</p>
                     </div>
                 </div>
             </div>
@@ -233,12 +224,11 @@
     <footer class="py-5 text-center border-top border-secondary border-opacity-25">
         <div class="container">
             <h2 class="navbar-brand fs-1 mb-4">H.S. SOLANKI</h2>
-            <p class="text-dim mb-4">PGT Computer Science | digitalguideweb.in</p>
             <div class="d-flex justify-content-center gap-4 mb-4 fs-3">
                 <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white"><i class="fas fa-envelope"></i></a>
                 <a href="tel:+918005676406" class="text-white"><i class="fas fa-phone"></i></a>
             </div>
-            <p class="small opacity-50">&copy; 2026. Premium Portfolio Designed by Jain Ji.</p>
+            <p class="small opacity-50">&copy; 2026. Designed with Excellence by PJ.</p>
         </div>
     </footer>
 
