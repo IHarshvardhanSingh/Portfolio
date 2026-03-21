@@ -14,7 +14,7 @@
         :root {
             --accent: #00ffcc;
             --bg-deep: #0a0b10;
-            --card-glass: rgba(255, 255, 255, 0.03);
+            --card-glass: rgba(255, 255, 255, 0.04);
             --text-bright: #ffffff;
             --text-dim: #94a3b8;
             --gradient: linear-gradient(135deg, #00ffcc 0%, #3399ff 100%);
@@ -36,22 +36,17 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 15px 0;
         }
-        .navbar-brand { font-weight: 800; color: var(--accent) !important; }
-        .nav-link { color: var(--text-dim) !important; font-weight: 500; transition: 0.3s; }
+        .navbar-brand { font-weight: 800; color: var(--accent) !important; font-size: 1.5rem; }
+        .nav-link { color: var(--text-dim) !important; font-weight: 500; transition: 0.3s; margin: 0 10px; }
         .nav-link:hover { color: var(--accent) !important; }
-
-        /* Typography */
-        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); text-align: center; margin-bottom: 60px; }
-        .section-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* Hero Section */
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; }
-        .profile-img { 
-            width: 100%; max-width: 400px; border-radius: 40px; 
-            border: 3px solid var(--accent); box-shadow: 0 0 50px rgba(0, 255, 204, 0.2); 
-        }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .profile-img { width: 100%; max-width: 400px; border-radius: 40px; border: 3px solid var(--accent); box-shadow: 0 0 50px rgba(0, 255, 204, 0.2); }
 
-        /* Cards & Hover Effects */
+        /* Generic Card Style */
         .premium-card {
             background: var(--card-glass);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -59,47 +54,43 @@
             padding: 20px;
             transition: 0.4s ease;
             height: 100%;
-            position: relative;
             overflow: hidden;
         }
-        .premium-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.06);
-        }
+        .premium-card:hover { transform: translateY(-10px); border-color: var(--accent); background: rgba(255, 255, 255, 0.07); }
 
-        /* Image Containers for Books & Work */
+        /* Image Containers (Fixed Aspect Ratio) */
         .img-container {
-            width: 100%; height: 280px; border-radius: 18px; 
-            overflow: hidden; margin-bottom: 20px; position: relative;
+            width: 100%; height: 260px; border-radius: 18px; 
+            overflow: hidden; margin-bottom: 15px; position: relative;
         }
         .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 
-        /* Eye Overlay for Client Work */
+        /* Eye Link Overlay */
         .view-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 255, 204, 0.35);
+            background: rgba(0, 255, 204, 0.4);
             display: flex; justify-content: center; align-items: center;
             opacity: 0; transition: 0.4s; backdrop-filter: blur(4px);
         }
         .premium-card:hover .view-overlay { opacity: 1; }
-        .eye-btn {
-            width: 55px; height: 55px; background: #fff; color: #000;
-            border-radius: 50%; display: flex; justify-content: center; align-items: center;
-            font-size: 1.4rem; text-decoration: none; transition: 0.3s;
-        }
-        .eye-btn:hover { transform: scale(1.1); background: var(--accent); }
+        .eye-btn { width: 50px; height: 50px; background: #fff; color: #000; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; }
 
-        /* Tech Pills */
+        /* Section Title */
+        .section-head { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 50px; }
+        .section-head span { color: var(--accent); }
+
+        /* Tech Badges */
         .tech-pill {
-            display: inline-block; padding: 8px 18px; background: rgba(0, 255, 204, 0.05);
-            border: 1px solid var(--accent); border-radius: 10px; margin: 5px;
-            font-size: 0.9rem; font-weight: 600; color: var(--accent);
+            display: inline-block; padding: 10px 20px; background: rgba(0, 255, 204, 0.05);
+            border: 1px solid var(--accent); border-radius: 12px; margin: 6px;
+            font-weight: 700; color: var(--accent); transition: 0.3s;
         }
+        .tech-pill:hover { background: var(--accent); color: #000; }
 
         @media (max-width: 768px) {
             .hero { text-align: center; }
-            .img-container { height: 220px; }
+            .hero-btns { justify-content: center; }
+            .img-container { height: 200px; }
         }
     </style>
 </head>
@@ -107,17 +98,17 @@
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">HSS.SOLANKI</a>
+            <a class="navbar-brand" href="#">H.S. SOLANKI</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#work">Web Work</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="mailto:harshvardhansinghsolanki@yahoo.co.in">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Intro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#books">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#apps">Ecosystem</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clients">Web Infra</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
                 </ul>
             </div>
         </div>
@@ -127,107 +118,113 @@
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-7" data-aos="fade-right">
-                    <h5 class="text-info fw-bold mb-3">AUTHOR • INNOVATOR • PGT CS</h5>
-                    <h1 class="section-title text-start mb-4">Mastering <span>Digital Innovation</span></h1>
-                    <p class="text-dim fs-5 mb-5">HOD Computer Science at Birla International School with 15+ years of excellence in programming and database architecture[cite: 9, 10].</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="tel:+918005676406" class="btn btn-info btn-lg rounded-pill px-5 fw-bold">Call Now</a>
+                    <h5 class="text-info fw-bold mb-3">AUTHOR • INNOVATOR • PROGRAMMER • PGT CS</h5>
+                    <h1 class="hero-title">Architecting <span>Digital Solutions</span></h1>
+                    <p class="text-dim fs-5 mb-4">HOD Computer Dept at Birla International School. Over 15 years of mastery in software, databases, and networks[cite: 5, 9, 10].</p>
+                    <div class="d-flex flex-wrap gap-3 hero-btns">
+                        <a href="tel:+918005676406" class="btn btn-info btn-lg px-4 fw-bold rounded-pill">Call Me</a>
+                        <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="btn btn-outline-light btn-lg px-4 rounded-pill">Email</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center mb-5" data-aos="zoom-in">
-                    <img src="image.PNG" class="profile-img" alt="Profile">
+                    <img src="image.PNG" class="profile-img" alt="Harshvardhan Singh">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="books" class="py-5">
+    <section id="books" class="py-5 bg-black bg-opacity-25">
         <div class="container">
-            <h2 class="section-title">Published <span>Authorship</span></h2>
+            <h2 class="section-head">Published <span>Authorship</span></h2>
             <div class="row g-4">
-                <div class="col-6 col-md-3" data-aos="fade-up">
-                    <div class="premium-card text-center">
-                        <div class="img-container"><img src="book1.jpeg" alt="Brief of Computer"></div>
-                        <h6 class="fw-bold">Brief of Computer</h6>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="premium-card text-center">
-                        <div class="img-container"><img src="book2.jpeg" alt="C Language"></div>
-                        <h6 class="fw-bold">C Programming</h6>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="premium-card text-center">
-                        <div class="img-container"><img src="book4.jpeg" alt="Code Connections"></div>
-                        <h6 class="fw-bold">Code Connections</h6>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="premium-card text-center">
-                        <div class="img-container"><img src="book5.jpeg" alt="IT Grade X"></div>
-                        <h6 class="fw-bold">IT Grade X</h6>
-                    </div>
-                </div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book1.jpeg"></div><h6>Brief of Computer</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book2.jpeg"></div><h6>C Language</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book3.jpeg"></div><h6>C++ Architecture</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book4.jpeg"></div><h6>Code Connections</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book5.jpeg"></div><h6>IT Grade X</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book6.jpeg"></div><h6>Java Mastery</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book7.jpeg"></div><h6>Beyond Algorithms</h6></div></div>
+                <div class="col-6 col-md-3"><div class="premium-card text-center"><div class="img-container"><img src="book8.jpeg"></div><h6>ABC Python</h6></div></div>
             </div>
         </div>
     </section>
 
-    <section id="work" class="py-5 bg-black bg-opacity-25">
+    <section id="apps" class="py-5">
         <div class="container">
-            <h2 class="section-title">Web <span>Infrastructure</span></h2>
+            <h2 class="section-head">Digital <span>Ecosystem</span></h2>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="premium-card">
-                        <div class="img-container">
-                            <img src="client.PNG" alt="Abhyuday College">
-                            <div class="view-overlay">
-                                <a href="https://abhyudaycollegejodhpur.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <h5 class="fw-bold">Abhyuday College</h5>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="premium-card">
-                        <div class="img-container">
-                            <img src="client1.PNG" alt="Physics Institute">
-                            <div class="view-overlay">
-                                <a href="https://physicsresearchinstitute.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <h5 class="fw-bold">Physics Institute</h5>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="premium-card">
-                        <div class="img-container">
-                            <img src="client2.PNG" alt="Abhyuday Law">
-                            <div class="view-overlay">
-                                <a href="https://abhyudaylawcollegejodhpur.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <h5 class="fw-bold">Abhyuday Law</h5>
-                    </div>
-                </div>
+                <div class="col-md-4"><div class="premium-card"><img src="hss2.jpeg" class="w-100 rounded-4 mb-3"><h5>CS Solution App</h5><p class="small text-dim">Learning app for Grade IX-XII on Play Store.</p></div></div>
+                <div class="col-md-4"><div class="premium-card"><img src="hss.jpeg" class="w-100 rounded-4 mb-3"><h5>Book Hive</h5><p class="small text-dim">Advanced School Library Desktop Automation[cite: 32].</p></div></div>
+                <div class="col-md-4"><div class="premium-card"><img src="hss4.jpeg" class="w-100 rounded-4 mb-3"><h5>Learnix CMS</h5><p class="small text-dim">Coaching management system for students & fees.</p></div></div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title">Technical <span>Arsenal</span></h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Oracle DB</span>
-                    <span class="tech-pill">Java / Kotlin</span>
-                    <span class="tech-pill">C / C++</span>
-                    <span class="tech-pill">ASP.NET</span>
-                    <span class="tech-pill">MS Azure</span>
-                    <span class="tech-pill">WPF</span>
-                    <span class="tech-pill">Fluent English</span>
-                    <span class="tech-pill">French Language</span>
+    <section id="clients" class="py-5 bg-black bg-opacity-25">
+        <div class="container">
+            <h2 class="section-head">Web <span>Infrastructure</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="premium-card">
+                    <div class="img-container"><img src="client.PNG">
+                    <div class="view-overlay"><a href="https://abhyudaycollegejodhpur.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a></div>
+                    </div><h5>Abhyuday College</h5></div></div>
+                <div class="col-md-4"><div class="premium-card">
+                    <div class="img-container"><img src="client1.PNG">
+                    <div class="view-overlay"><a href="https://physicsresearchinstitute.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a></div>
+                    </div><h5>Physics Institute</h5></div></div>
+                <div class="col-md-4"><div class="premium-card">
+                    <div class="img-container"><img src="client2.PNG">
+                    <div class="view-overlay"><a href="https://abhyudaylawcollegejodhpur.com/" target="_blank" class="eye-btn"><i class="fas fa-eye"></i></a></div>
+                    </div><h5>Abhyuday Law</h5></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5 text-center">
+        <div class="container">
+            <h2 class="section-head">Technical <span>Arsenal</span></h2>
+            <div class="tech-box p-4 rounded-5 border border-secondary">
+                <span class="tech-pill">Python</span> <span class="tech-pill">Oracle Database</span>
+                <span class="tech-pill">Java / Kotlin</span> <span class="tech-pill">C / C++</span>
+                <span class="tech-pill">ASP.NET</span> <span class="tech-pill">WPF</span>
+                <span class="tech-pill">MS Azure</span> <span class="tech-pill">LINQ With SQL</span>
+                <span class="tech-pill">Fluent English</span> <span class="tech-pill">French Language</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="legacy" class="py-5 bg-black bg-opacity-40">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="mb-4 text-info fw-bold">Professional History</h3>
+                    <div class="p-4 border-start border-info border-4 bg-white bg-opacity-5 rounded-end mb-3">
+                        <h6>HOD & PGT Computer Science</h6>
+                        <p class="small text-dim">Birla International School (Since 2011)[cite: 9, 10].</p>
+                    </div>
+                    <div class="p-4 border-start border-info border-4 bg-white bg-opacity-5 rounded-end mb-3">
+                        <h6>Exam In-Charge (I-XII)</h6>
+                        <p class="small text-dim">Overall examination administration (Since 2015)[cite: 21].</p>
+                    </div>
+                    <div class="p-4 border-start border-info border-4 bg-white bg-opacity-5 rounded-end">
+                        <h6>Question Paper Setter</h6>
+                        <p class="small text-dim">District Level Common Exams, Sojat Road (Since 2015)[cite: 25].</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4 text-info fw-bold">Academic Foundations</h3>
+                    <div class="p-4 border-start border-primary border-4 bg-white bg-opacity-5 rounded-end mb-3">
+                        <h6>MCA (Hons Division) - 2011</h6>
+                        <p class="small text-dim">Rajasthan Technical University, Kota[cite: 27].</p>
+                    </div>
+                    <div class="p-4 border-start border-primary border-4 bg-white bg-opacity-5 rounded-end mb-3">
+                        <h6>BCA (First Division) - 2008</h6>
+                        <p class="small text-dim">M.C.N.U. Bhopal[cite: 35].</p>
+                    </div>
+                    <div class="p-4 border-start border-primary border-4 bg-white bg-opacity-5 rounded-end">
+                        <h6>12th Science-Biology (RBSE)</h6>
+                        <p class="small text-dim">Birla International School[cite: 37].</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,19 +233,17 @@
     <footer class="py-5 text-center border-top border-secondary border-opacity-25">
         <div class="container">
             <h2 class="navbar-brand fs-1 mb-4">H.S. SOLANKI</h2>
-            <div class="d-flex justify-content-center gap-4 mb-4">
-                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white fs-3"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+918005676406" class="text-white fs-3"><i class="fas fa-phone"></i></a>
-                <a href="http://www.digitalguideweb.in" target="_blank" class="text-white fs-3"><i class="fas fa-globe"></i></a>
+            <p class="text-dim mb-4">PGT Computer Science | digitalguideweb.in</p>
+            <div class="d-flex justify-content-center gap-4 mb-4 fs-3">
+                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+918005676406" class="text-white"><i class="fas fa-phone"></i></a>
             </div>
-            <p class="text-dim small">&copy; 2026. Designed with Excellence by PJ.</p>
+            <p class="small opacity-50">&copy; 2026. Premium Portfolio Designed by Jain Ji.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
 </body>
 </html>
