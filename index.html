@@ -11,7 +11,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* --- Root Variables & Theme --- */
         :root {
             --primary: #00ffcc;
             --secondary: #3399ff;
@@ -24,7 +23,6 @@
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- Global Reset --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Outfit', sans-serif;
@@ -35,16 +33,13 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Custom Scrollbar --- */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 10px; }
 
-        /* --- Layout Components --- */
         .section-padding { padding: 100px 0; }
         .container { max-width: 1200px; }
 
-        /* --- Typography --- */
         .mega-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
@@ -76,7 +71,6 @@
             border-radius: 10px;
         }
 
-        /* --- Navbar Glassmorphism --- */
         .navbar {
             background: rgba(5, 6, 10, 0.9) !important;
             backdrop-filter: blur(20px);
@@ -104,7 +98,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- Hero Section --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -145,12 +138,7 @@
             filter: grayscale(20%);
             transition: var(--transition);
         }
-        .profile-container:hover .profile-frame {
-            transform: scale(1.02) rotate(1deg);
-            border-color: var(--secondary);
-        }
 
-        /* --- Ultra Cards --- */
         .ultra-card {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -162,24 +150,11 @@
             overflow: hidden;
             z-index: 1;
         }
-        .ultra-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            z-index: -1;
-            transition: var(--transition);
-        }
         .ultra-card:hover {
             transform: translateY(-15px);
-            border-color: transparent;
-        }
-        .ultra-card:hover h4, .ultra-card:hover h5, .ultra-card:hover p {
-            color: #fff;
+            border-color: var(--primary);
         }
 
-        /* --- Image Boxes --- */
         .img-box {
             width: 100%;
             height: 280px;
@@ -194,11 +169,7 @@
             object-fit: cover;
             transition: 0.8s;
         }
-        .ultra-card:hover .img-box img {
-            transform: scale(1.1) rotate(-2deg);
-        }
 
-        /* --- Eye Link Overlay --- */
         .overlay-link {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -227,7 +198,6 @@
         }
         .eye-icon:hover { transform: scale(1.2); background: #fff; }
 
-        /* --- Tech Arsenal --- */
         .tech-grid {
             display: flex;
             flex-wrap: wrap;
@@ -243,7 +213,6 @@
             font-size: 0.95rem;
             color: var(--text-dim);
             transition: var(--transition);
-            cursor: default;
         }
         .tech-item:hover {
             background: var(--primary);
@@ -253,7 +222,6 @@
             transform: translateY(-5px);
         }
 
-        /* --- Legacy Timeline --- */
         .timeline-box {
             position: relative;
             padding-left: 40px;
@@ -284,7 +252,6 @@
             transform: translateX(15px);
         }
 
-        /* --- Buttons --- */
         .btn-premium {
             background: var(--gradient);
             color: #000 !important;
@@ -302,7 +269,6 @@
             box-shadow: 0 15px 40px rgba(0, 255, 204, 0.4);
         }
 
-        /* --- Footer --- */
         footer {
             padding: 100px 0 50px;
             background: #020306;
@@ -316,18 +282,15 @@
         }
         .footer-links a:hover { color: var(--primary); transform: scale(1.2); }
 
-        /* --- Responsive Queries --- */
         @media (max-width: 991px) {
             .hero { text-align: center; padding-top: 150px; }
             .hero .d-flex { justify-content: center; }
-            .profile-container { margin-top: 50px; }
             .mega-title { font-size: 3.2rem; }
         }
         @media (max-width: 768px) {
             .section-padding { padding: 60px 0; }
             .mega-title { font-size: 2.8rem; }
             .img-box { height: 220px; }
-            .legacy-card { padding: 25px; }
         }
     </style>
 </head>
@@ -450,14 +413,26 @@
             <h2 class="section-head" data-aos="fade-up">Digital <span>Ecosystem</span></h2>
             <div class="row g-5">
                 <div class="col-lg-4" data-aos="zoom-in">
-                    <div class="ultra-card">
-                        <div class="img-box"><img src="hss2.jpeg" alt="CS Solution"></div>
-                        <h4 class="fw-bold">CS Solution App</h4>
+                    <div class="ultra-card text-center">
+                        <div class="img-box">
+                            <img src="hss2.jpeg" alt="CS Solution">
+                            <div class="overlay-link">
+                                <a href="https://iharshvardhansingh.github.io/Cience/" target="_blank" class="eye-icon">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold">Cience / CS Solution</h4>
                         <p class="text-dim">A comprehensive mobile learning platform for Grade IX-XII students, integrated with Play Store for global distribution.</p>
+                        <div class="mt-3">
+                            <a href="https://iharshvardhansingh.github.io/Cience/" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4">
+                                Live Preview <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="ultra-card">
+                    <div class="ultra-card text-center">
                         <div class="img-box"><img src="hss.jpeg" alt="Book Hive"></div>
                         <h4 class="fw-bold">Book Hive</h4>
                         <p class="text-dim">Professional School Library Desktop Automation system designed for tracking thousands of monographs and categories.</p>
@@ -482,7 +457,8 @@
                         </div>
                     </div>
                 </div>
-           </div>
+            </div>
+        </div>
     </section>
 
     <section id="web" class="section-padding">
@@ -490,7 +466,7 @@
             <h2 class="section-head" data-aos="fade-up">Web <span>Infrastructure</span></h2>
             <div class="row g-4">
                 <div class="col-md-4" data-aos="flip-left">
-                    <div class="ultra-card">
+                    <div class="ultra-card text-center">
                         <div class="img-box">
                             <img src="client.PNG" alt="Abhyuday College">
                             <div class="overlay-link">
@@ -499,11 +475,11 @@
                                 </a>
                             </div>
                         </div>
-                        <h5 class="fw-bold text-center">Abhyuday College Jodhpur</h5>
+                        <h5 class="fw-bold">Abhyuday College Jodhpur</h5>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-                    <div class="ultra-card">
+                    <div class="ultra-card text-center">
                         <div class="img-box">
                             <img src="client1.PNG" alt="Physics Institute">
                             <div class="overlay-link">
@@ -512,11 +488,11 @@
                                 </a>
                             </div>
                         </div>
-                        <h5 class="fw-bold text-center">Physics Research Institute</h5>
+                        <h5 class="fw-bold">Physics Research Institute</h5>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                    <div class="ultra-card">
+                    <div class="ultra-card text-center">
                         <div class="img-box">
                             <img src="client2.PNG" alt="Abhyuday Law">
                             <div class="overlay-link">
@@ -525,7 +501,7 @@
                                 </a>
                             </div>
                         </div>
-                        <h5 class="fw-bold text-center">Abhyuday Law College</h5>
+                        <h5 class="fw-bold">Abhyuday Law College</h5>
                     </div>
                 </div>
             </div>
@@ -560,56 +536,57 @@
             <div class="row g-5">
                 <div class="col-lg-6" data-aos="fade-right">
                     <h2 class="section-head text-start mb-5" style="font-size: 2.2rem;">Professional <span>History</span></h2>
-                    
                     <div class="timeline-box">
                         <div class="legacy-card">
                             <h4 class="fw-bold text-primary">HOD & PGT Computer Science</h4>
                             <p class="small text-dim mb-2">Birla International School, Sojat | 2011 - Present</p>
-                            <p class="small mb-0">Driving institutional excellence through lab administration, 10+2 level education, and automated office workflows.</p>
+                            <p class="small mb-0">Driving institutional excellence through lab administration, 10+2 level education, and automated office workflows[cite: 9, 10].</p>
                         </div>
                     </div>
-
                     <div class="timeline-box">
                         <div class="legacy-card">
                             <h4 class="fw-bold text-primary">Exam In-Charge (Class I to XII)</h4>
                             <p class="small text-dim mb-2">Academic Administration | 2015 - Present</p>
-                            <p class="small mb-0">Strategic planning of examination cycles, duty management, and centralized result processing.</p>
+                            <p class="small mb-0">Strategic planning of examination cycles, duty management, and centralized result processing[cite: 18, 19, 21].</p>
                         </div>
                     </div>
-
                     <div class="timeline-box">
                         <div class="legacy-card">
                             <h4 class="fw-bold text-primary">Question Paper Setter</h4>
                             <p class="small text-dim mb-2">District Level Common Exams | 2015 - Present</p>
-                            <p class="small mb-0">Expert moderator for Computer Science papers across district-level annual and half-yearly evaluation cycles in Sojat Road.</p>
+                            <p class="small mb-0">Expert moderator for Computer Science papers across district-level annual and half-yearly evaluation cycles in Sojat Road[cite: 22, 23, 25].</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-left">
                     <h2 class="section-head text-start mb-5" style="font-size: 2.2rem;">Academic <span>Foundations</span></h2>
-                    
+                    <div class="timeline-box">
+                        <div class="legacy-card">
+                            <h4 class="fw-bold text-secondary">Bachelor of Education (B.Ed.)</h4>
+                            <p class="small text-dim mb-2">Mohanlal Sukhadia University (MLSU), Udaipur | 2025</p>
+                            <p class="small mb-0">Completed professional teaching degree for advanced pedagogy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box">
+                        <div class="legacy-card">
+                            <h4 class="fw-bold text-secondary">Bachelor of Science (BSc - Chemistry, Biology, Zoology)</h4>
+                            <p class="small text-dim mb-2">Mohanlal Sukhadia University (MLSU), Udaipur | 2021</p>
+                            <p class="small mb-0">Integrated scientific foundation in Biological and Chemical sciences.</p>
+                        </div>
+                    </div>
                     <div class="timeline-box">
                         <div class="legacy-card">
                             <h4 class="fw-bold text-secondary">MCA (Honors Division)</h4>
                             <p class="small text-dim mb-2">Rajasthan Technical University, Kota | 2011</p>
-                            <p class="small mb-0">Master of Computer Application completed with Honors distinction for academic excellence.</p>
+                            <p class="small mb-0">Master of Computer Application completed with Honors distinction for academic excellence[cite: 27].</p>
                         </div>
                     </div>
-
                     <div class="timeline-box">
                         <div class="legacy-card">
                             <h4 class="fw-bold text-secondary">BCA (First Division)</h4>
                             <p class="small text-dim mb-2">M.C.N.U. Bhopal | 2008</p>
-                            <p class="small mb-0">Foundational degree in Computer Applications with first-class merit.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-box">
-                        <div class="legacy-card">
-                            <h4 class="fw-bold text-secondary">12th Science-Biology (RBSE)</h4>
-                            <p class="small text-dim mb-2">Higher Secondary | 2005</p>
-                            <p class="small mb-0">Achieved First Division in Science-Biology stream under the RBSE Rajasthan board.</p>
+                            <p class="small mb-0">Foundational degree in Computer Applications with first-class merit[cite: 35, 36].</p>
                         </div>
                     </div>
                 </div>
@@ -627,7 +604,7 @@
                 <a href="http://www.digitalguide.co.in" target="_blank"><i class="fas fa-globe"></i></a>
             </div>
             <p class="small opacity-25 mt-5">
-                &copy; 2026 Harshvardhan Singh All Rights Reserved. All Rights Reserved.
+                &copy; 2026 Harshvardhan Singh. All Rights Reserved.
             </p>
         </div>
     </footer>
@@ -637,7 +614,6 @@
     <script>
         AOS.init({ duration: 1000, once: true });
         
-        // Dynamic Navbar Background Change on Scroll
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 document.querySelector('.navbar').style.padding = '12px 0';
