@@ -1,159 +1,121 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H.S. Solanki | Elite Architect</title>
+    <title>Harshvardhan Singh | Senior Architect & Educator</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            --accent: #00ffa3; 
-            --deep-bg: #05070a;
-            --surface: #0f1219;
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
+            --accent: #00ffcc;
+            --bg-deep: #0a0b10;
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --text-bright: #ffffff;
+            --text-muted: #94a3b8;
+            --gradient: linear-gradient(135deg, #00ffcc 0%, #3399ff 100%);
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--deep-bg);
-            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-bright);
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
         }
 
-        /* Smooth Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--deep-bg); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
-
-        /* Typography Updates */
-        h1, h2, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
-
-        /* Mobile Optimized Navbar */
+        /* Navbar */
         .navbar {
-            background: rgba(5, 7, 10, 0.8) !important;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--glass-border);
+            background: rgba(10, 11, 16, 0.9) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 15px 0;
         }
-        .navbar-brand { font-weight: 700; letter-spacing: -1px; font-size: 1.5rem; }
-        
-        /* Hero Section - Better Mobile Layout */
-        .hero { 
-            padding: 140px 0 80px;
-            background: radial-gradient(circle at 10% 20%, rgba(0, 255, 163, 0.05) 0%, transparent 50%);
-        }
-        .hero-h1 { 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            font-weight: 800; 
-            line-height: 1;
-            letter-spacing: -2px;
-        }
-        .hero-h1 span {
-            background: linear-gradient(90deg, #00ffa3, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .navbar-brand { font-weight: 800; color: var(--accent) !important; }
 
-        .profile-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-        .profile-giant {
-            width: 100%;
-            max-width: 380px;
-            border-radius: 30px;
-            filter: grayscale(20%);
-            transition: 0.5s;
-        }
-        .profile-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: -10px;
-            border: 2px solid var(--accent);
-            border-radius: 35px;
-            z-index: -1;
-            opacity: 0.3;
-        }
+        /* Sections */
+        .section-padding { padding: 80px 0; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); text-align: center; margin-bottom: 60px; }
+        .section-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Modern Card System */
-        .modern-card {
-            background: var(--surface);
-            border: 1px solid var(--glass-border);
+        /* Client Cards with Eye Link */
+        .client-card {
+            background: var(--card-glass);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
-            padding: 24px;
+            padding: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
-        .modern-card:hover {
+        .client-card:hover {
+            transform: translateY(-15px);
             border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
-        .card-img {
-            width: 100%;
+
+        .img-overlay-container {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
             height: 220px;
-            object-fit: cover;
-            border-radius: 16px;
             margin-bottom: 20px;
         }
+        .img-overlay-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        
+        /* Eye Link Overlay */
+        .view-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 255, 204, 0.3);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; transition: 0.4s;
+            backdrop-filter: blur(4px);
+        }
+        .client-card:hover .view-overlay { opacity: 1; }
+        .client-card:hover img { transform: scale(1.1); filter: blur(2px); }
 
-        /* Skill Pills */
-        .skill-tag {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--glass-border);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin: 5px;
+        .eye-btn {
+            width: 60px; height: 60px;
+            background: #fff; color: #000;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 1.5rem; text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .eye-btn:hover { transform: scale(1.2); background: var(--accent); }
+
+        /* Technical Arsenal Pills */
+        .tech-pill {
             display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin: 6px;
+            font-weight: 600;
             transition: 0.3s;
         }
-        .skill-tag:hover {
-            background: var(--accent);
-            color: var(--deep-bg);
-            font-weight: 600;
+        .tech-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Legacy Boxes */
+        .legacy-item {
+            padding: 30px;
+            border-left: 5px solid var(--accent);
+            background: rgba(255,255,255,0.02);
+            border-radius: 0 20px 20px 0;
+            margin-bottom: 25px;
         }
 
-        /* Legacy Timeline */
-        .timeline-item {
-            border-left: 2px solid var(--accent);
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 40px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent);
-        }
-
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero { text-align: center; padding-top: 100px; }
-            .hero-subtitle { font-size: 1.1rem; }
-            .btn-lg { width: 100%; padding: 18px !important; }
-            .modern-card { padding: 16px; }
-            .mega-title { font-size: 2rem; margin-bottom: 40px; }
-        }
-
-        footer {
-            background: #020305;
-            padding: 80px 0 30px;
-            border-top: 1px solid var(--glass-border);
+            .section-padding { padding: 50px 0; }
+            .section-title { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -161,107 +123,152 @@
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">H.S. <span style="color:var(--accent)">SOLANKI</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="fas fa-bars-staggered text-white"></span>
+            <a class="navbar-brand" href="#">HSS.SOLANKI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center mt-3 mt-lg-0">
-                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#books">Books</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#software">Ecosystem</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#skills">Tech Stack</a></li>
-                    <li class="nav-item"><a class="nav-link px-3 btn btn-outline-success ms-lg-3 mt-2 mt-lg-0" href="tel:+918005676406">Hire Me</a></li>
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Intro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Web Infrastructure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
+    <section id="home" class="section-padding" style="min-height: 90vh; display: flex; align-items: center;">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7" data-aos="fade-up">
-                    <div class="d-flex align-items-center gap-2 mb-3 justify-content-center justify-content-lg-start">
-                        <span style="width:40px; height:2px; background:var(--accent)"></span>
-                        <span class="text-uppercase fw-bold tracking-widest small" style="color:var(--accent)">Sr. Architect & Author</span>
-                    </div>
-                    <h1 class="hero-h1 mb-4">Crafting High<br><span>Performance</span> Code</h1>
-                    <p class="text-secondary fs-5 mb-5 px-lg-0 px-3">Senior PGT CS (HOD) at Birla International School. Specializing in Software Architecture and Database Management with 15+ years of academic and industrial excellence.</p>
-                    
-                    <div class="d-flex flex-column flex-md-row gap-3 px-3 px-lg-0">
-                        <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="btn btn-success btn-lg rounded-pill fw-bold px-5">Start a Project</a>
-                        <a href="#books" class="btn btn-outline-light btn-lg rounded-pill px-5">View Authorship</a>
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h5 class="text-info fw-bold mb-3">Author | Innovator | Programmer | HOD</h5>
+                    <h1 class="section-title text-start mb-4">Architecting <span>Digital Legacy</span></h1>
+                    <p class="text-muted fs-5 mb-5">Senior PGT Computer Science at Birla International School. Mastery in software development, databases, and large-scale web systems[cite: 9, 10].</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="tel:+918005676406" class="btn btn-info btn-lg rounded-pill px-5 py-3 fw-bold">Contact Now</a>
                     </div>
                 </div>
-                <div class="col-lg-5 text-center" data-aos="zoom-out">
-                    <div class="profile-wrapper">
-                        <img src="image.PNG" class="profile-giant" alt="Harshvardhan Singh">
-                    </div>
+                <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="zoom-in">
+                    <img src="image.PNG" class="img-fluid rounded-5 shadow-lg border border-info border-opacity-25" style="max-height: 400px;" alt="Harshvardhan Singh">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="books" class="py-5">
+    <section id="work" class="section-padding bg-black bg-opacity-25">
         <div class="container">
-            <h2 class="mb-5 text-center fw-bold" data-aos="fade-up">Published Works</h2>
+            <span class="d-block text-center text-accent fw-bold mb-2">Our Premium Clients</span>
+            <h2 class="section-title">Web <span>Infrastructure</span></h2>
             <div class="row g-4">
-                <div class="col-6 col-md-3" data-aos="fade-up">
-                    <div class="modern-card">
-                        <img src="book4.jpeg" class="card-img" alt="Python Book">
-                        <h6 class="fw-bold mb-1 text-truncate">Code Connections</h6>
-                        <p class="small text-secondary m-0">Python & MySQL</p>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="client-card">
+                        <div class="img-overlay-container">
+                            <img src="client.PNG" alt="Abhyuday College">
+                            <div class="view-overlay">
+                                <a href="https://abhyudaycollegejodhpur.com/" target="_blank" class="eye-btn shadow-lg">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold">Abhyuday College</h4>
+                        <p class="text-muted small">Premium institutional portal for nurturing talent and tradition in Jodhpur.</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="modern-card">
-                        <img src="book2.jpeg" class="card-img">
-                        <h6 class="fw-bold mb-1 text-truncate">C Programming</h6>
-                        <p class="small text-secondary m-0">Advanced Logic</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="client-card">
+                        <div class="img-overlay-container">
+                            <img src="client1.PNG" alt="Physics Institute">
+                            <div class="view-overlay">
+                                <a href="https://physicsresearchinstitute.com/" target="_blank" class="eye-btn shadow-lg">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold">Physics Institute</h4>
+                        <p class="text-muted small">Advanced research and learning platform with interactive academic resources.</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="modern-card">
-                        <img src="book6.jpeg" class="card-img">
-                        <h6 class="fw-bold mb-1 text-truncate">Java Mastery</h6>
-                        <p class="small text-secondary m-0">Core & Advanced</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="modern-card">
-                        <img src="book8.jpeg" class="card-img">
-                        <h6 class="fw-bold mb-1 text-truncate">ABC Python</h6>
-                        <p class="small text-secondary m-0">Basics for All</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="client-card">
+                        <div class="img-overlay-container">
+                            <img src="client2.PNG" alt="Abhyuday Law">
+                            <div class="view-overlay">
+                                <a href="https://abhyudaylawcollegejodhpur.com/" target="_blank" class="eye-btn shadow-lg">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold">Abhyuday Law</h4>
+                        <p class="text-muted small">Specialized web infrastructure for empowering future legal professionals.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-5">
-        <div class="container">
-            <div class="modern-card border-success border-opacity-25 py-5 text-center">
-                <h3 class="mb-4">Technical Expertise</h3>
-                <div class="d-flex flex-wrap justify-content-center">
-                    <span class="skill-tag">Python & Kotlin</span>
-                    <span class="skill-tag">Oracle SQL / MySQL</span>
-                    <span class="skill-tag">Microsoft Azure</span>
-                    <span class="skill-tag">ASP.NET / WPF</span>
-                    <span class="skill-tag">Java / C++ Mastery</span>
-                    <span class="skill-tag">System Administration</span>
+    <section id="skills" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-title">Technical <span>Arsenal</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Oracle Database</span>
+                    <span class="tech-pill">Java / Kotlin</span>
+                    <span class="tech-pill">C & C++</span>
+                    <span class="tech-pill">MS Azure Framework</span>
+                    <span class="tech-pill">LINQ & SQL</span>
+                    <span class="tech-pill">ASP.NET</span>
+                    <span class="tech-pill">WPF Desktop Apps</span>
+                    <span class="tech-pill">Fluent Spoken English</span>
+                    <span class="tech-pill">French Language</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center">
+    <section id="legacy" class="section-padding bg-black bg-opacity-40">
         <div class="container">
-            <h2 class="fw-bold mb-4">H.S. <span style="color:var(--accent)">SOLANKI</span></h2>
-            <div class="d-flex justify-content-center gap-4 mb-5 flex-wrap">
-                <a href="tel:+918005676406" class="text-decoration-none text-white"><i class="fas fa-phone me-2 text-success"></i> +91 8005676406</a>
-                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-decoration-none text-white"><i class="fas fa-envelope me-2 text-success"></i> Email Me</a>
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="mb-5 text-info fw-bold fs-2">Teaching Legacy</h3>
+                    <div class="legacy-item">
+                        <h4>HOD & PGT Computer Science</h4>
+                        <p class="text-info fw-bold small">Birla International School (Since 2011)</p>
+                        <p class="text-muted small">Managing full-scale labs and teaching 10+2 levels[cite: 9, 10].</p>
+                    </div>
+                    <div class="legacy-item">
+                        <h4>Exam In-Charge</h4>
+                        <p class="text-info fw-bold small">I to XII (Since 2015)</p>
+                        <p class="text-muted small">Strategic planning and execution of all school-level examinations[cite: 21].</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-5 text-info fw-bold fs-2">Academic Pillars</h3>
+                    <div class="legacy-item">
+                        <h4>MCA (Hons Division)</h4>
+                        <p class="text-info fw-bold small">RTU Kota (2011)</p>
+                        <p class="text-muted small">Master of Computer Application with Honors distinction[cite: 27].</p>
+                    </div>
+                    <div class="legacy-item">
+                        <h4>BCA (First Division)</h4>
+                        <p class="text-info fw-bold small">MCNU Bhopal (2008)</p>
+                        <p class="text-muted small">Bachelor of Computer Application with excellence.</p>
+                    </div>
+                </div>
             </div>
-            <p class="text-secondary small">&copy; 2026 | Built with Excellence by <span class="text-white">PJ</span></p>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 border-top border-secondary border-opacity-25">
+        <div class="container">
+            <h2 class="navbar-brand fs-1 mb-4">H.S. SOLANKI</h2>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white fs-4"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+918005676406" class="text-white fs-4"><i class="fas fa-phone"></i></a>
+                <a href="http://www.digitalguideweb.in" target="_blank" class="text-white fs-4"><i class="fas fa-globe"></i></a>
+            </div>
+            <p class="text-muted small">&copy; 2026. Designed with Excellence by PJ.</p>
         </div>
     </footer>
 
