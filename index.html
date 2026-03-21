@@ -1,138 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshvardhan Singh | Author, Innovator & Educator</title>
+    <title>Harshvardhan Singh | Senior Software Architect & IT Educator</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #00ffa3; 
-            --secondary: #00d4ff;
-            --bg-dark: #05070a;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text-main: #ffffff;
-            --text-dim: #a1a1aa;
+            --primary: #00e676; --bg-black: #020408; 
+            --glass: rgba(255, 255, 255, 0.03);
+            --text-main: #f8fafc; --text-dim: #94a3b8;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Responsive Navigation */
-        .navbar {
-            background: rgba(5, 7, 10, 0.9) !important;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 0;
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; scroll-behavior: smooth; line-height: 1.6; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        .navbar { background: rgba(2, 4, 8, 0.9) !important; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px 0; }
         .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 900; color: var(--primary) !important; }
-        .nav-link { color: var(--text-dim) !important; font-weight: 500; transition: 0.3s; margin: 0 10px; }
-        .nav-link:hover { color: var(--primary) !important; }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 100px 0 50px;
-            background: radial-gradient(circle at top right, rgba(0, 255, 163, 0.05), transparent);
-        }
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .hero-title span { color: var(--primary); }
-        .hero-subtitle { font-size: clamp(1rem, 4vw, 1.4rem); color: var(--text-dim); margin-bottom: 30px; }
-
-        /* Professional Tags */
-        .pro-tag {
-            display: inline-block;
-            padding: 5px 15px;
-            background: rgba(0, 255, 163, 0.1);
-            border: 1px solid var(--primary);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin: 5px;
-            font-weight: 600;
-        }
-
-        /* Ultra Cards */
-        .ultra-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 25px;
-            height: 100%;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .ultra-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        /* Tech Badges */
-        .tech-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            background: #111;
-            border-left: 3px solid var(--primary);
-            margin: 5px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-        .tech-badge:hover { background: var(--primary); color: #000; }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .hero { text-align: center; }
-            .hero-btns { justify-content: center; }
-        }
-
-        footer {
-            padding: 80px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: #020305;
-        }
+        .hero { min-height: 100vh; padding-top: 100px; display: flex; align-items: center; }
+        .hero-h1 { font-family: 'Playfair Display', serif; font-size: calc(2.5rem + 2vw); font-weight: 900; line-height: 1.2; }
+        .hero-h1 span { color: var(--primary); }
+        .profile-giant { width: 100%; max-width: 380px; aspect-ratio: 4/5; object-fit: cover; border-radius: 40px; border: 3px solid var(--primary); box-shadow: 0 0 50px rgba(0, 230, 118, 0.2); animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .mega-title { font-family: 'Playfair Display', serif; font-size: calc(2rem + 1.5vw); font-weight: 900; margin-bottom: 60px; text-align: center; }
+        .mega-title span { color: var(--primary); }
+        .ultra-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); border-radius: 25px; padding: 20px; transition: 0.4s; height: 100%; }
+        .ultra-card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(255,255,255,0.06); }
+        .img-container { width: 100%; height: 250px; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .tech-badge { background: rgba(0, 230, 118, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 50px; margin: 5px; display: inline-block; font-weight: 600; font-size: 0.85rem; }
+        footer { padding: 80px 0; background: #010203; border-top: 2px solid var(--primary); text-align: center; }
+        @media (max-width: 768px) { .hero { text-align: center; } .profile-giant { margin-top: 50px; } }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">HSS</a>
-            <button class="navbar-toggler btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#home">HARSHVARDHAN SINGH</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Intro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#books">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#software">Apps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#web">Web</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Legacy</a></li>
-                    <li class="nav-item"><a class="nav-link" href="mailto:harshvardhansinghsolanki@yahoo.co.in">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
                 </ul>
             </div>
         </div>
@@ -141,133 +60,125 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <div class="mb-3">
-                        <span class="pro-tag">Author</span>
-                        <span class="pro-tag">Innovator</span>
-                        <span class="pro-tag">App Developer</span>
-                        <span class="pro-tag">Database Administrator</span>
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h5 class="text-success fw-bold mb-3">Author | Innovator | Programmer | PGT CS</h5>
+                    <h1 class="hero-h1">Digital Guide to<br><span>Next-Gen Tech</span></h1>
+                    <p class="fs-5 text-dim mb-4">PGT Computer Science (HOD) at Birla International School. An organized Teacher with 15+ years of expertise in App Development, Databases, and Software Architecture.</p>
+                    <div class="mb-4">
+                        <span class="tech-badge"><i class="fas fa-language me-1"></i> Fluent English</span>
+                        <span class="tech-badge"><i class="fas fa-globe-europe me-1"></i> French Language</span>
                     </div>
-                    <h1 class="hero-title">Harshvardhan<br><span>Singh Solanki</span></h1>
-                    <p class="hero-subtitle">PGT Computer Science & HOD at Birla International School. Architecting digital solutions and inspiring the next generation of coders.</p>
-                    
-                    <div class="d-flex flex-wrap gap-3 hero-btns">
-                        <a href="tel:+918005676406" class="btn btn-primary btn-lg px-4 py-3 fw-bold rounded-pill">Call Me</a>
-                        <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold rounded-pill">Email Me</a>
-                    </div>
+                    <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-bold">Let's Connect</a>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="zoom-in">
+                    <img src="image.PNG" class="profile-giant" alt="Harshvardhan Singh">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-5">
+    <section id="books" class="py-5">
+        <div class="container">
+            <h2 class="mega-title" data-aos="fade-up">Published <span>Books</span></h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-3" data-aos="fade-up"><div class="ultra-card"><div class="img-container"><img src="book1.jpeg"></div><h6 class="fw-bold">Brief of Computer</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="ultra-card"><div class="img-container"><img src="book2.jpeg"></div><h6 class="fw-bold">C Programming</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="ultra-card"><div class="img-container"><img src="book3.jpeg"></div><h6 class="fw-bold">C++ Architecture</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="ultra-card"><div class="img-container"><img src="book4.jpeg"></div><h6 class="fw-bold">Code Connections</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up"><div class="ultra-card"><div class="img-container"><img src="book5.jpeg"></div><h6 class="fw-bold">IT Grade X</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="ultra-card"><div class="img-container"><img src="book6.jpeg"></div><h6 class="fw-bold">Java Mastery</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="ultra-card"><div class="img-container"><img src="book7.jpeg"></div><h6 class="fw-bold">Beyond Algorithms</h6></div></div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="ultra-card"><div class="img-container"><img src="book8.jpeg"></div><h6 class="fw-bold">The ABC Python</h6></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="software" class="py-5 bg-black bg-opacity-40 text-center">
+        <div class="container text-start">
+            <h2 class="mega-title text-center" data-aos="fade-up">Software <span>Ecosystem</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in"><div class="ultra-card"><img src="hss.jpeg" class="w-100 rounded-4 mb-3"><h6>Book Hive (Library Manager)</h6></div></div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="ultra-card"><img src="hss2.jpeg" class="w-100 rounded-4 mb-3"><h6>CS Solution (Android App)</h6></div></div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="ultra-card"><img src="hss3.jpeg" class="w-100 rounded-4 mb-3"><h6>Examify (Portal)</h6></div></div>
+                <div class="col-md-6" data-aos="fade-up"><div class="ultra-card"><img src="hss4.jpeg" class="w-100 rounded-4 mb-3"><h6>Learnix (Coaching CMS)</h6></div></div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="ultra-card"><img src="hss5.jpeg" class="w-100 rounded-4 mb-3"><h6>Inkris (PDF & Invoice)</h6></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="web" class="py-5">
         <div class="container text-center">
-            <h2 class="section-title" data-aos="fade-up">Technical <span>Arsenal</span></h2>
-            <div class="row g-4 justify-content-center" data-aos="fade-up">
-                <div class="col-12">
-                    <div class="mb-4">
-                        <h5 class="text-primary fw-bold mb-3">Programming & Frameworks</h5>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Java</span>
-                        <span class="tech-badge">C / C++</span>
-                        <span class="tech-badge">Kotlin Android</span>
-                        <span class="tech-badge">Active Server Pages (ASP)</span>
-                        <span class="tech-badge">LINQ With SQL</span>
-                        <span class="tech-badge">Microsoft Azure</span>
-                        <span class="tech-badge">WPF</span>
-                    </div>
-                    <div class="mb-4">
-                        <h5 class="text-primary fw-bold mb-3">Databases & Tools</h5>
-                        <span class="tech-badge">Oracle Database Programming</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">Network Administration</span>
-                    </div>
-                    <div>
-                        <h5 class="text-primary fw-bold mb-3">Languages & Communication</h5>
-                        <span class="tech-badge"><i class="fas fa-check-circle me-1"></i> Fluent Spoken English</span>
-                        <span class="tech-badge"><i class="fas fa-language me-1"></i> Understanding of French</span>
-                    </div>
-                </div>
+            <h2 class="mega-title" data-aos="fade-up">Institutional <span>Websites</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="flip-left"><div class="ultra-card"><img src="client.PNG" class="w-100 rounded-4 mb-3"><h6>Abhyuday College</h6></div></div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100"><div class="ultra-card"><img src="client1.PNG" class="w-100 rounded-4 mb-3"><h6>Physics Institute</h6></div></div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200"><div class="ultra-card"><img src="client2.PNG" class="w-100 rounded-4 mb-3"><h6>Abhyuday Law</h6></div></div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-5 bg-black bg-opacity-25">
+    <section id="skills" class="py-5 bg-black bg-opacity-40 text-center">
+        <div class="container">
+            <h2 class="mega-title" data-aos="fade-up">Technical <span>Arsenal</span></h2>
+            <div class="p-4 bg-white bg-opacity-5 rounded-5 shadow-lg">
+                <span class="tech-badge">Python Programming</span>
+                <span class="tech-badge">Oracle Database Programming</span>
+                <span class="tech-badge">C / C++ / Java / Kotlin</span>
+                <span class="tech-badge">Windows Presentation Foundation (WPF)</span>
+                <span class="tech-badge">LINQ With SQL</span>
+                <span class="tech-badge">Microsoft Azure Framework</span>
+                <span class="tech-badge">Active Server Pages (ASP)</span>
+                <span class="tech-badge">Web Application Development</span>
+                <span class="tech-badge">Application & Lab Administration</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="legacy" class="py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <h3 class="mb-4 text-primary"><i class="fas fa-briefcase me-2"></i> Professional Experience</h3>
-                    <div class="ultra-card mb-4">
-                        <h5 class="fw-bold">HOD Computer Dept.</h5>
-                        <p class="text-primary small">Birla International School | 2011 - Present</p>
-                        <ul class="small text-dim">
-                            <li>Overall administration and 10+2 computer education.</li>
-                            <li>Managing complex computer lab environments.</li>
-                            <li>Automating office workflows through custom software.</li>
-                        </ul>
+                    <h3 class="mb-4 text-success fw-bold">Professional Legacy</h3>
+                    <div class="mb-4 border-start border-success border-4 ps-3">
+                        <h5>HOD & PGT Computer Science</h5>
+                        <p class="small text-dim">Birla International School (Since 2011)</p>
                     </div>
-                    <div class="ultra-card">
-                        <h5 class="fw-bold">Exam In-Charge & Paper Setter</h5>
-                        <p class="text-primary small">District Level Common Exams | 2015 - Present</p>
-                        <p class="small text-dim">Moderating and setting District Level Computer Science papers for Class IX-XII.</p>
+                    <div class="mb-4 border-start border-success border-4 ps-3">
+                        <h5>Exam In-Charge (I-XII)</h5>
+                        <p class="small text-dim">School Administration (Since 2015)</p>
+                    </div>
+                    <div class="mb-4 border-start border-success border-4 ps-3">
+                        <h5>Question Paper Setter</h5>
+                        <p class="small text-dim">District Level Common Exams (Since 2015)</p>
                     </div>
                 </div>
-
                 <div class="col-lg-6" data-aos="fade-left">
-                    <h3 class="mb-4 text-secondary"><i class="fas fa-graduation-cap me-2"></i> Education</h3>
-                    <div class="ultra-card mb-4">
-                        <h5 class="fw-bold">MCA (Hons Division)</h5>
-                        <p class="text-secondary small">RTU Kota | 2011</p>
-                        <p class="small text-dim">Master of Computer Application with high distinction.</p>
+                    <h3 class="mb-4 text-success fw-bold">Academic Excellence</h3>
+                    <div class="mb-4 border-start border-success border-4 ps-3">
+                        <h5>MCA (Hons Division) - 2011</h5>
+                        <p class="small text-dim">RTU Kota</p>
                     </div>
-                    <div class="ultra-card mb-4">
-                        <h5 class="fw-bold">BCA (First Division)</h5>
-                        <p class="text-secondary small">MCNU Bhopal | 2008</p>
-                        <p class="small text-dim">Bachelor of Computer Application with First Division.</p>
+                    <div class="mb-4 border-start border-success border-4 ps-3">
+                        <h5>BCA (First Division) - 2008</h5>
+                        <p class="small text-dim">M.C.N.U. Bhopal</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title">Digital <span>Creations</span></h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="ultra-card">
-                        <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
-                        <h4>Spactive App</h4>
-                        <p class="small text-dim">E-Learning platform for RBSE Board students covering Science & Commerce.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="ultra-card">
-                        <i class="fas fa-desktop fa-3x mb-3 text-primary"></i>
-                        <h4>Educator CMS</h4>
-                        <p class="small text-dim">Windows application for managing coaching classes and student records.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="ultra-card">
-                        <i class="fas fa-book fa-3x mb-3 text-primary"></i>
-                        <h4>Monograph</h4>
-                        <p class="small text-dim">Advanced Library Management System for automated book tracking.</p>
+                    <div class="mb-4 border-start border-success border-4 ps-3">
+                        <h5>12th Science-Biology (1st Div)</h5>
+                        <p class="small text-dim">RBSE Board - 2005</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="py-5">
         <div class="container text-center">
-            <h2 class="navbar-brand fs-1">HSS</h2>
-            <p class="text-dim">Harshvardhan Singh | PGT Computer Science</p>
-            <div class="mt-4">
-                <a href="tel:+918005676406" class="btn btn-outline-primary mx-2"><i class="fas fa-phone"></i></a>
-                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="btn btn-outline-primary mx-2"><i class="fas fa-envelope"></i></a>
+            <h2 class="navbar-brand text-white fs-1 mb-4">HARSHVARDHAN SINGH</h2>
+            <div class="mb-4">
+                <a href="mailto:harshvardhansinghsolanki@yahoo.co.in" class="text-white text-decoration-none mx-3"><i class="fas fa-envelope text-success"></i> Email</a>
+                <a href="tel:+918005676406" class="text-white text-decoration-none mx-3"><i class="fas fa-phone text-success"></i> Call Now</a>
             </div>
-            <p class="small mt-5 opacity-50">&copy; 2026 Harshvardhan Singh | All Rights Reserved.</p>
+            <p class="text-secondary small">&copy; 2026. Premium Portfolio Created by Jain Ji.</p>
         </div>
     </footer>
 
